@@ -1,33 +1,40 @@
 import Link from "next/link";
 
-const exhibits = [
+const rooms = [
   {
-    room: "Room 1",
+    label: "Room 1",
     title: "Physical Retail",
     href: "/physical-retail",
-    blurb:
-      "Stores were once the interface. Layout, lighting, and product placement shaped what people noticed and bought.",
+    description:
+      "Before digital platforms, stores used layout, lighting, and product placement to shape how people shopped.",
   },
   {
-    room: "Room 2",
+    label: "Room 2",
     title: "E-Commerce",
     href: "/ecommerce",
-    blurb:
-      "Shopping moved from aisles to screens. Search, categories, and product pages became the new retail environment.",
+    description:
+      "Shopping moved from physical aisles to screens, where menus, search bars, and product pages became the new retail environment.",
   },
   {
-    room: "Room 3",
+    label: "Room 3",
     title: "AI Personalization",
     href: "/ai-personalization",
-    blurb:
-      "Today the storefront is adaptive. Algorithms decide what users see, what gets emphasized, and what feels relevant.",
+    description:
+      "Algorithms now influence what users see, what feels relevant, and what products are most likely to be purchased.",
+  },
+  {
+    label: "Room 4",
+    title: "Ethics & Reflection",
+    href: "/ethics",
+    description:
+      "As shopping becomes more personalized, questions about privacy, surveillance, and digital influence become harder to ignore.",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-stone-950 text-stone-100">
-      <section className="border-b border-stone-800">
+    <main className="min-h-screen bg-black text-white">
+      <section className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
           <p className="uppercase tracking-[0.3em] text-xs text-white/50 mb-4">
             Digital Museum
@@ -41,9 +48,14 @@ export default function Home() {
                 Consumer Experience
               </h1>
 
-              <p className="text-lg md:text-xl text-white/75 max-w-3xl">
-                A curated digital exhibit on how shopping evolved from physical
-                retail to e-commerce and AI-driven personalization.
+              <p className="text-lg md:text-xl text-white/75 max-w-3xl mb-6">
+                A digital exhibit on how shopping evolved from physical retail
+                to e-commerce and AI-driven personalization.
+              </p>
+
+              <p className="text-base md:text-lg text-white/60 max-w-3xl">
+                This museum examines how systems, interfaces, and data changed
+                the way consumers discover, evaluate, and purchase products.
               </p>
             </div>
 
@@ -53,8 +65,10 @@ export default function Home() {
                   Curatorial Statement
                 </p>
                 <p className="text-sm text-white/75 leading-6">
-                  This museum explores how systems, interfaces, and data changed
-                  the way consumers discover, evaluate, and purchase products.
+                  The exhibit is organized as a progression through four rooms.
+                  Visitors move from physical spaces, to digital interfaces, to
+                  algorithmic personalization, and finally to ethical
+                  reflection.
                 </p>
               </div>
             </div>
@@ -64,21 +78,24 @@ export default function Home() {
 
       <section className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-14">
-          <div className="grid md:grid-cols-3 gap-6">
-            {exhibits.map((item) => (
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {rooms.map((room) => (
               <Link
-                key={item.href}
-                href={item.href}
-                className="group border border-stone-800 p-6 hover:border-stone-600 transition"
+                key={room.href}
+                href={room.href}
+                className="group border border-white/15 p-6 hover:border-white/40 transition"
               >
-                <p className="text-xs uppercase tracking-[0.25em] text-stone-400 mb-6">
-                  {item.room}
+                <p className="text-xs uppercase tracking-[0.25em] text-white/50 mb-6">
+                  {room.label}
                 </p>
+
                 <h2 className="text-3xl font-medium mb-4 group-hover:underline underline-offset-4">
-                  {item.title}
+                  {room.title}
                 </h2>
-                <p className="text-stone-300 leading-7">{item.blurb}</p>
-                <div className="mt-10 text-sm text-stone-500">
+
+                <p className="text-white/70 leading-7">{room.description}</p>
+
+                <div className="mt-10 text-sm text-white/60">
                   Enter exhibit →
                 </div>
               </Link>
@@ -96,27 +113,27 @@ export default function Home() {
           </div>
 
           <div className="md:col-span-9 grid md:grid-cols-3 gap-6">
-            <div className="border border-stone-800 p-5">
+            <div className="border border-white/10 p-5">
               <h3 className="text-lg font-medium mb-3">Systems</h3>
-              <p className="text-sm text-stone-300 leading-6">
+              <p className="text-sm text-white/70 leading-6">
                 Inventory systems, ERP platforms, and recommendation engines all
-                shape the consumer journey behind the scenes.
+                shape the consumer experience behind the scenes.
               </p>
             </div>
 
-            <div className="border border-stone-800 p-5">
+            <div className="border border-white/10 p-5">
               <h3 className="text-lg font-medium mb-3">Interfaces</h3>
-              <p className="text-sm text-stone-300 leading-6">
-                From store aisles to search bars to personalized feeds, the
-                interface of shopping keeps changing.
+              <p className="text-sm text-white/70 leading-6">
+                From store aisles to product pages to personalized feeds, the
+                interface of shopping has continuously changed.
               </p>
             </div>
 
-            <div className="border border-stone-800 p-5">
+            <div className="border border-white/10 p-5">
               <h3 className="text-lg font-medium mb-3">Ethics</h3>
-              <p className="text-sm text-stone-300 leading-6">
+              <p className="text-sm text-white/70 leading-6">
                 Greater convenience often depends on more tracking, more data,
-                and less transparency for the user.
+                and less transparency for the consumer.
               </p>
             </div>
           </div>

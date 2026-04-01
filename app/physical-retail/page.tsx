@@ -1,23 +1,23 @@
 import Link from "next/link";
 
-const artifactCards = [
+const conceptCards = [
   {
     title: "Store Layout",
-    text: "Retailers used layout to guide traffic, increase exposure to products, and influence what shoppers encountered first.",
+    text: "Retailers used floor plans to guide movement, increase exposure to products, and control what shoppers encountered first.",
   },
   {
     title: "Product Placement",
-    text: "Eye-level shelves, endcaps, and checkout displays were all designed to capture attention and increase impulse purchases.",
+    text: "Eye-level shelves, endcaps, and checkout displays were designed to capture attention and encourage impulse buying.",
   },
   {
     title: "Sensory Design",
-    text: "Lighting, music, signage, and store atmosphere shaped how shoppers felt and how long they stayed in the space.",
+    text: "Lighting, music, signage, and atmosphere shaped how shoppers felt and how long they stayed in the store.",
   },
 ];
 
 export default function PhysicalRetail() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-white">
+    <main className="min-h-screen bg-black text-white">
       <section className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <p className="uppercase tracking-[0.3em] text-xs text-white/50 mb-4">
@@ -54,7 +54,7 @@ export default function PhysicalRetail() {
           <div className="md:col-span-7">
             <div className="aspect-[4/3] border border-white/15 bg-white/5 flex items-center justify-center">
               <p className="text-white/35 text-sm uppercase tracking-[0.2em]">
-                Artifact Image Area
+                Featured Artifact Area
               </p>
             </div>
           </div>
@@ -87,18 +87,18 @@ export default function PhysicalRetail() {
               Interpretation
             </p>
             <h2 className="text-3xl font-medium mb-4">
-              Retailers Were Already Personalizing Experience — Just Without AI
+              Consumer Experience Was Already Being Engineered
             </h2>
             <p className="text-white/75 leading-7">
-              Physical retail relied on environment instead of data dashboards.
-              Placement, flow, sensory cues, and merchandising strategy all
-              worked together to shape what consumers noticed first and what
-              they were most likely to buy.
+              Physical retail relied on architecture, merchandising, and sensory
+              cues instead of data dashboards. Even without digital systems,
+              stores were carefully designed to shape what consumers noticed
+              first and what they were most likely to buy.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {artifactCards.map((card) => (
+            {conceptCards.map((card) => (
               <div key={card.title} className="border border-white/10 p-6">
                 <h3 className="text-xl font-medium mb-3">{card.title}</h3>
                 <p className="text-white/70 leading-7 text-sm">{card.text}</p>
@@ -120,9 +120,8 @@ export default function PhysicalRetail() {
             <p className="text-lg text-white/80 leading-8 max-w-3xl">
               Physical retail proves that consumer experience has always been
               designed. What changed later was not the existence of influence,
-              but the tools used to produce it. Stores used architecture and
-              merchandising. Digital platforms would later use interface design
-              and data.
+              but the tools used to produce it. Stores used space and display.
+              Digital platforms would later use interfaces and data.
             </p>
           </div>
         </div>
